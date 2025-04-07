@@ -5,26 +5,21 @@ nav {
   justify-content: space-between;
   color: #FFFFFF;
   background-color: #4056A1;
-/*120-pixel height is very ugly, i changed it to 60*/
-  height: 60px;
-}
-
-span {
+/*120-pixel height is very ugly, i suggest 60*/
+  height: 120px;
   padding-right: 1.5em;
   padding-left: 1.5em;
   padding-bottom: 0.25em;
+  font-family: "Bungee", sans-serif;
 }
 
-
 .left-span {
-  font-family: "Bungee", sans-serif;
   font-size: xx-large;
   position: relative;
 }
 
 
 .right-span {
-  font-family: "Source Sans 3", sans-serif;
   font-size: medium;
   display:flex;
   flex-direction: column;
