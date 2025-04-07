@@ -9,17 +9,19 @@ nav {
   height: 120px;
   padding-right: 1.5em;
   padding-left: 1.5em;
-  padding-bottom: 0.25em;
-  font-family: "Bungee", sans-serif;
+/*no padding on the bottom is ulgy, i suggest adding one*/  
+/*  padding-bottom: 0.25em; */
 }
 
 .left-span {
+  font-family: "Bungee", sans-serif;
   font-size: xx-large;
   position: relative;
 }
 
 
 .right-span {
+  font-family: "Bungee", sans-serif;
   font-size: medium;
   display:flex;
   flex-direction: column;
