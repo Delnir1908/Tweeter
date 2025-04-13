@@ -17,10 +17,12 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+    <script src="/scripts/composer-char-counter.js"></script>
+    
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
 
@@ -60,12 +62,55 @@
           <textarea name="text" id="tweet-text"></textarea>
           <div class="tweet-form-footer">
             <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">
-              <script src="/scripts/composer-char-counter.js"></script>
-            </output>
+            <output name="counter" class="counter" for="tweet-text"></output>
           </div>
         </form>
       </section>
+      <article class="tweet">
+        <header>
+          <div><img src="https://pyxis.nymag.com/v1/imgs/5b5/b31/c24e06ba9a740ede406bc4b16d5b2d66e4-musk-.rsquare.w400.jpg"></img></div>
+          <div>Elon Musk</div>
+        </header>
+        <p>Next I’m buying Coca-Cola to put the cocaine back in</p>
+        <footer>
+          <div>3 years ago</div>
+          <div calss="icon">
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </footer>
+      </article>
+      <article class="tweet">
+        <header>
+          <div><img src="https://savejersey.com/wp-content/uploads/2019/09/angry-greta-climate-activist.png"></img></div>
+          <div>Greta Thunberg</div>
+        </header>
+        <p>yes, please do enlighten me. email me at smalldickenergy@getalife.com</p>
+        <footer>
+          <div>10 days ago</div>
+          <div calss="icon">
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </footer>
+      </article>
+      <article class="tweet">
+        <header>
+          <div><img src="https://static-assets-1.truthsocial.com/tmtg:prime-ts-assets/accounts/avatars/107/780/257/626/128/497/original/454286ac07a6f6e6.jpeg"></img></div>
+          <div>President Donald J. Trump</div>
+        </header>
+        <p>Every single day I will be fighting for you with every breath in my body. I will not rest until we have delivered the strong, safe and prosperous America that our children deserve and that you deserve. This will truly be the golden age of America.</p>
+        <footer>
+          <div>2 months ago</div>
+          <div calss="icon">
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </footer>
+      </article>
     </main>
   </body>
 </html>
