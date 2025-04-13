@@ -11,9 +11,10 @@
   background-color: inherit;
   border: none;
   border-bottom: 3px solid black;
+  padding: 10px;
 }
 
-.new-tweet-bottom {
+.tweet-form-footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -24,5 +25,11 @@ button {
   background-color: #4056A1;
   border: 0;
   font-family: "Bungee", sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  color: #4056A1;
+  background-color:inherit;
 }
 
