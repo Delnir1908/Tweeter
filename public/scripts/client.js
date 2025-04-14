@@ -62,8 +62,15 @@ renderTweets(data);
 
 $("form").on('submit', function (event) {
   event.preventDefault();
-  let $sterializedTweet = $(this).sterialize();
+  let $serializedTweet = $(this).serialize();
   //test code
-  //console.log($sterializedTweet);
-  $.ajax('/server', { method: 'POST' })
+  //console.log($serializedTweet);
+  $.ajax({
+    url: 'api/tweets',
+    method: 'POST',
+    data: $serializedTweet,
+    success:function(response) {
+      console.log('Tweet submitted successfully:', response);
+    }
+  })
 });
