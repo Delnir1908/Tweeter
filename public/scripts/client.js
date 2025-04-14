@@ -57,3 +57,13 @@ return $tweet;
 }
 
 renderTweets(data);
+
+
+
+$("form").on('submit', function (event) {
+  event.preventDefault();
+  let $sterializedTweet = $(this).sterialize();
+  //test code
+  //console.log($sterializedTweet);
+  $.ajax('/server', { method: 'POST' })
+});
