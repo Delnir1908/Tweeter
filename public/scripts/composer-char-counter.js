@@ -2,6 +2,8 @@ $(document).ready(function() {
   // --- our code goes here ---
   //test code
   //console.log('ready!');
+  loadTweets();
+  
   $("#tweet-text").on('input', function() {
     const maxChars = 140;
     const counter= $(this).parent().find('.counter');

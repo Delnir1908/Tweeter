@@ -35,29 +35,28 @@ const renderTweets = function(tweets) {
 }
 
 const createTweetElement = function(tweet) {
-let $tweet = $(
-  ` <article class="tweet">
-      <header>
-        <div><img src="${tweet.user.avatars}"></img></div>
-        <div>${tweet.user.name}</div>
-      </header>
-      <p>${tweet.content.text}</p>
-      <footer>
-        <div>timeago.format(${tweet.created_at})</div>
-        <div class="icon">
-          <i class="fa-solid fa-flag"></i>
-          <i class="fa-solid fa-retweet"></i>
-          <i class="fa-solid fa-heart"></i>
-        </div>
-      </footer>
-    </article>`
-  );
+  let timeAgo = timeago.format(tweet.created_at);
+    
+  let $tweet = $(
+    ` <article class="tweet">
+        <header>
+          <div><img src="${tweet.user.avatars}"></img></div>
+          <div>${tweet.user.name}</div>
+        </header>
+        <p>${tweet.content.text}</p>
+        <footer>
+          <div>${timeAgo})</div>
+          <div class="icon">
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </footer>
+      </article>`
+    );
 
 return $tweet;
 }
-
-renderTweets(data);
-
 
 
 $("form").on('submit', function (event) {
@@ -80,6 +79,6 @@ const loadTweets= function() {
   $.ajax({
     url: 'api/tweets',
     method: 'GET',
-    success:renderTweets(data)
+    success:renderTweets
   })
 }
