@@ -65,7 +65,10 @@ $("form").on('submit', function (event) {
   //test code
   //console.log($serializedTweet);
   const $tweetToSend = $(this).find("textarea").val().trim();
-  validateTweet($tweetToSend);
+  
+  if (validateTweet($tweetToSend)) {
+    return false;
+  }
 
   $.ajax({
     url: 'api/tweets',
@@ -86,7 +89,7 @@ const validateTweet = function(tweet) {
     return false;
   }
 
-  if (tweetLength > 140){
+  if (tweet.length > 140){
     alert("Error: max 140 characters allowed");
     return false;
   }
