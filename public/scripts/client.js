@@ -65,8 +65,8 @@ $("form").on('submit', function (event) {
   //test code
   //console.log($serializedTweet);
   const $tweetToSend = $(this).find("textarea").val().trim();
-  
-  if (validateTweet($tweetToSend)) {
+
+  if (!validateTweet($tweetToSend)) {
     return false;
   }
 
@@ -76,7 +76,8 @@ $("form").on('submit', function (event) {
     data: $serializedTweet,
     success:function(response) {
       console.log('Tweet submitted successfully:', response);
-      $("#new-tweet").trigger("reset");     
+      $("#new-tweet").trigger("reset");
+      loadTweets();
     }
   })
 
@@ -94,13 +95,9 @@ const validateTweet = function(tweet) {
     return false;
   }
 
+  return true;
+
 }
-
-
-
-
-
-
 
 const loadTweets= function() {
   $.ajax({
