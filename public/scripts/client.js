@@ -64,12 +64,25 @@ $("form").on('submit', function (event) {
   let $serializedTweet = $(this).serialize();
   //test code
   //console.log($serializedTweet);
+  const $tweetToSend = $(this).find("textarea").val();
+  const tweetLength = $tweetToSend.trim().length;
+  if (tweetLength === 0) {
+    alert("Error: your tweet is empty");
+    $("#new-tweet").trigger("reset");
+    return false;
+  } 
+  if (tweetLength > 140){
+    alert("Error: max 140 characters allowed");
+    $("#new-tweet").trigger("reset");
+    return false;
+  } 
   $.ajax({
     url: 'api/tweets',
     method: 'POST',
     data: $serializedTweet,
     success:function(response) {
       console.log('Tweet submitted successfully:', response);
+      $("#new-tweet").trigger("reset");     
     }
   })
 });
