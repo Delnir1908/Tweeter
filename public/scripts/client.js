@@ -64,18 +64,9 @@ $("form").on('submit', function (event) {
   let $serializedTweet = $(this).serialize();
   //test code
   //console.log($serializedTweet);
-  const $tweetToSend = $(this).find("textarea").val();
-  const tweetLength = $tweetToSend.trim().length;
-  if (tweetLength === 0) {
-    alert("Error: your tweet is empty");
-    $("#new-tweet").trigger("reset");
-    return false;
-  } 
-  if (tweetLength > 140){
-    alert("Error: max 140 characters allowed");
-    $("#new-tweet").trigger("reset");
-    return false;
-  } 
+  const $tweetToSend = $(this).find("textarea").val().trim();
+  validateTweet($tweetToSend);
+
   $.ajax({
     url: 'api/tweets',
     method: 'POST',
@@ -85,7 +76,27 @@ $("form").on('submit', function (event) {
       $("#new-tweet").trigger("reset");     
     }
   })
+
 });
+
+const validateTweet = function(tweet) {
+
+  if (tweet.length === 0) {
+    alert("Error: your tweet is empty");
+    return false;
+  }
+
+  if (tweetLength > 140){
+    alert("Error: max 140 characters allowed");
+    return false;
+  }
+
+}
+
+
+
+
+
 
 
 const loadTweets= function() {
