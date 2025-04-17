@@ -32,3 +32,8 @@ button:hover {
   color: #4056A1;
   background-color:inherit;
 }
+
+#tweet-error {
+  display: none;
+  color: red;
+}

@@ -43,7 +43,7 @@ const createTweetElement = function(tweet) {
           <div><img src="${tweet.user.avatars}"></img></div>
           <div>${tweet.user.name}</div>
         </header>
-        <p>${tweet.content.text}</p>
+        <p>${escape(tweet.content.text)}</p>
         <footer>
           <div>${timeAgo})</div>
           <div class="icon">
@@ -59,7 +59,7 @@ return $tweet;
 }
 
 
-$("form").on('submit', function (event) {
+$("#tweet-box").on('submit', function (event) {
   event.preventDefault();
   let $serializedTweet = $(this).serialize();
   //test code
@@ -71,38 +71,50 @@ $("form").on('submit', function (event) {
   }
 
   $.ajax({
-    url: 'api/tweets',
+    url: '/api/tweets',
     method: 'POST',
     data: $serializedTweet,
     success:function(response) {
       console.log('Tweet submitted successfully:', response);
       $("#new-tweet").trigger("reset");
+      $("#tweets-container").empty();
       loadTweets();
     }
   })
 
 });
 
+
 const validateTweet = function(tweet) {
 
   if (tweet.length === 0) {
-    alert("Error: your tweet is empty");
+    showError("Error: your tweet is empty");
     return false;
   }
 
   if (tweet.length > 140){
-    alert("Error: max 140 characters allowed");
+    showError("Error: max 140 characters allowed");
     return false;
   }
-
+  
+  clearError();
   return true;
 
 }
 
-const loadTweets= function() {
+const loadTweets = function() {
   $.ajax({
     url: 'api/tweets',
     method: 'GET',
     success:renderTweets
   })
+}
+
+
+const showError = function(message) {
+  $("#tweet-error").text(message).show().slideDown();
+}
+
+const clearError = function() {
+  $("#tweet-error").hide().text('');
 }

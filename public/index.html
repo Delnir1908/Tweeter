@@ -58,9 +58,10 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form action="/api/tweets" method="POST">
+        <form id="tweet-box" action="/api/tweets" method="POST">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
+          <div id="tweet-error" class="error-message"></div>
           <div class="tweet-form-footer">
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text"></output>
