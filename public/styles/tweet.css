@@ -36,6 +36,8 @@ article.tweet p {
   border: none;
   border-bottom: 3px solid black;
   padding: 10px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 article.tweet footer {

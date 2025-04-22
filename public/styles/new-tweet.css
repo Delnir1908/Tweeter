@@ -36,4 +36,5 @@ button:hover {
 #tweet-error {
   display: none;
   color: red;
+  padding: 10px
 }
