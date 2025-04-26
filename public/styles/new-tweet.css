@@ -37,5 +37,6 @@ button:hover {
   display: none;
   color: red;
   padding: 10px;
-  margin: red solid;
+  border: red solid 3px;
+  margin: 3px;
 }

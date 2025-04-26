@@ -95,7 +95,7 @@ const loadTweets = function() {
 
 
 const showError = function(message) {
-  $("#tweet-error").text(message).show().slideDown();
+  $("#tweet-error").text(message).hide().slideDown();
 }
 
 const clearError = function() {
