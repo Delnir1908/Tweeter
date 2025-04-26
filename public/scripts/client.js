@@ -9,7 +9,7 @@ const renderTweets = function(tweets) {
   }
 }
 
-const escape = function (str) {
+const htmlEscape = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
@@ -21,10 +21,11 @@ const createTweetElement = function(tweet) {
   let $tweet = $(
     ` <article class="tweet">
         <header>
-          <div><img src="${tweet.user.avatars}"></img></div>
-          <div>${tweet.user.name}</div>
+            <div><img src="${tweet.user.avatars}"></img></div>
+            <div>${tweet.user.name}</div>
+            <div class="user-handle">${tweet.user.handle}</div>
         </header>
-        <p>${escape(tweet.content.text)}</p>
+        <p>${htmlEscape(tweet.content.text)}</p>
         <footer>
           <div>${timeAgo}</div>
           <div class="icon">
