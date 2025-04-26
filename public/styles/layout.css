@@ -43,13 +43,16 @@ body {
   
   header {
     flex: 1;
-    margin: 45px;
+    margin: 30px;
   }
 
   .container {
     flex: 2;
+    margin: 30px;
   }
 
+  article.tweet header {
+    margin: 10px;
+  }
+  
  }
-
- * { outline: 1px solid red; }
