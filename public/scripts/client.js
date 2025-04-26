@@ -58,7 +58,7 @@ $(document).ready(function() {
       data: serializedTweet,
       success:function(response) {
         console.log('Tweet submitted successfully:', response);
-        $("#new-tweet").trigger("reset");
+        $("#tweet-box").trigger("reset");
         $("#tweets-container").empty();
         loadTweets();
       }
