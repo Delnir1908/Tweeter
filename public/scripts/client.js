@@ -59,8 +59,8 @@ $(document).ready(function() {
       success:function(response) {
         console.log('Tweet submitted successfully:', response);
         $("#tweet-box").trigger("reset");
-        $("#tweets-container").empty();
-        loadTweets();
+        const $tweetElement = createTweetElement(response);
+        $("#tweets-container").prepend($tweetElement);
       }
     });
 
